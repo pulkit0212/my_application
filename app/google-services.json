@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "31914501118",
+    "firebase_url": "https://examtask-9e86c.firebaseio.com",
+    "project_id": "examtask-9e86c",
+    "storage_bucket": "examtask-9e86c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:31914501118:android:9c3e089b36ae6b61b756af",
+        "android_client_info": {
+          "package_name": "common.reachit.examtask"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "31914501118-lcmtc3evha5gr4ucbl78f0jlnlnkliom.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "common.reachit.examtask",
+            "certificate_hash": "dad496d51e8ea618d2b8cf98095fda650e3c4884"
+          }
+        },
+        {
+          "client_id": "31914501118-ujq8lbm73bvocuue97ukeklok9o1hs8i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBquo_h-S72NIPHmalxBpjdM60eQJbe4CI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "31914501118-ujq8lbm73bvocuue97ukeklok9o1hs8i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
