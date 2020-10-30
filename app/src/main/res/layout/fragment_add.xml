@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragment.AddFragment">
+
+    <RelativeLayout
+        android:layout_marginTop="70dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+    <LinearLayout
+        android:id="@+id/linear1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="23dp"
+        android:layout_marginRight="23dp"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/userTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enter Data"
+            android:textSize="16sp"
+            android:textColor="@color/darkGrey" />
+
+        <EditText
+            android:id="@+id/etData"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_weight="2"
+            android:layout_centerHorizontal="true"
+            android:paddingLeft="3dp"
+            android:textSize="18sp"
+            android:inputType="text"
+            android:drawablePadding="10dp" />
+    </LinearLayout>
+
+        <Button
+            android:id="@+id/btnSubmit"
+            android:layout_below="@+id/linear1"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:background="@drawable/buttonshape"
+            android:gravity="center"
+            android:layout_marginTop="60dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textColor="@color/white"
+            android:text="Submit"
+            android:layout_gravity="center"/>
+
+    </RelativeLayout>
+
+</FrameLayout>

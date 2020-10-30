@@ -1,6 +1,7 @@
 package common.reachit.examtask.Fragment;
 
 import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -20,6 +22,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
+import common.reachit.examtask.Login;
 import common.reachit.examtask.R;
 import common.reachit.examtask.SignUp;
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -29,6 +32,8 @@ public class ProfileFragment extends Fragment {
     TextView txtName,txtMail,txtPhone;
     String name,phone,email,image;
     CircleImageView profileImage;
+
+    TextView logout;
 
     FirebaseAuth firebaseAuth;
     FirebaseDatabase firebaseDatabase;
@@ -64,6 +69,8 @@ public class ProfileFragment extends Fragment {
         txtPhone = (TextView)view.findViewById(R.id.tvuserPhone);
         profileImage = (CircleImageView) view.findViewById(R.id.ivImage);
 
+        logout = (TextView)view.findViewById(R.id.logout);
+
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance();
         myRef = firebaseDatabase.getReference("users").child(firebaseAuth.getCurrentUser().getUid());
@@ -94,6 +101,28 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
+            }
+        });
+
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                builder.setTitle("Logout")
+                        .setMessage("Are you sure you want to Logout..?")
+                        .setPositiveButton("yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                firebaseAuth.signOut();
+                                Intent i = new Intent(getActivity(), Login.class);
+                                startActivity(i);
+                                ((Activity) getActivity()).overridePendingTransition(0, 0);
+                                getActivity().finish();
+                            }
+                        })
+                        .setNegativeButton("no", null).setCancelable(false);
+                AlertDialog alertDialog = builder.create();
+                alertDialog.show();
             }
         });
 
